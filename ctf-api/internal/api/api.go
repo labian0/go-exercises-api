@@ -2,11 +2,19 @@ package api
 
 import "github.com/gin-gonic/gin"
 
-func Run() {
+var EX1_ANSWER int
+var API_URL string
+
+func Init(address string, ex1Answer int) {
+
+	EX1_ANSWER = ex1Answer
+}
+
+func Run() error {
 	router := gin.Default()
 	endpoints := getDefaultEndpoints()
 	for _, ep := range endpoints {
 		router.Handle(ep.method, ep.route, ep.endpoint)
 	}
-	router.Run("0.0.0.0:1337")
+	return router.Run(API_URL)
 }

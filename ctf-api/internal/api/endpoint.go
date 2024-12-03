@@ -8,8 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const EX1_ANSWER int = 2397483
-
 type Endpoint struct {
 	route    string
 	endpoint gin.HandlerFunc
