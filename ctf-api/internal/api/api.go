@@ -6,7 +6,7 @@ var EX1_ANSWER int
 var API_URL string
 
 func Init(address string, ex1Answer int) {
-
+	API_URL = address
 	EX1_ANSWER = ex1Answer
 }
 
